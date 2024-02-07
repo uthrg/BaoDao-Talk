@@ -1,17 +1,27 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
+import "@fontsource/poppins";
+import "@fontsource/roboto";
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Page1 from './Page1.js';
+import Page2 from './Page2.js';
+import Page3 from './Page3.js';
+import Page4 from './Page4.js';
+import Page5 from './Page5.js';
+import Page6 from './Page6.js';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+import { ChakraProvider } from '@chakra-ui/react';
+
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+      <ChakraProvider>
+          <Page1 />
+          <Page2 />
+          <Page3 />
+          <Page4 />
+          <Page5 />
+          <Page6 />
+      </ChakraProvider>
+  </React.StrictMode>,
+  document.getElementById("root"),
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
