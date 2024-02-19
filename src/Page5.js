@@ -23,7 +23,7 @@ function Page5 () {
         >
 
             {/* Title */}
-            <Box color="#313030" fontFamily="Poppins" fontSize={{ base:"20px", md:"32px" }} fontWeight="700" lineHeight={{ base:"30px", md:"48px"}} textAlign={{ base:"left",md:"center"}}>
+            <Box mb={{ md:"40px" }} color="#313030" fontFamily="Poppins" fontSize={{ base:"20px", md:"32px" }} fontWeight="700" lineHeight={{ base:"30px", md:"48px"}} textAlign={{ base:"left",md:"center"}}>
                 <chakra.h5>Specially designed interactive materials for students at all levels</chakra.h5>
             </Box>
 
@@ -31,10 +31,10 @@ function Page5 () {
                 <Box mb={{ md:"48px" }} display="flex">
                     <Grid gridTemplateColumns={{ base:"1fr", md:"1fr 1fr 1fr"}}>
 
-                                <Image m="auto" borderRadius="8px" bgSize="cover" src="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section5_TaiwanFoodculture.png" alt="台灣飲食文化"></Image>
-                                <Image m="auto" borderRadius="8px" bgSize="cover"  src="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section5_TaiwanTroditionalclothies.jpg" alt="傳統服飾"></Image>
-                                <Image m="auto" borderRadius="8px" bgSize="cover" src="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section5_HeIsHoXian.png" alt="他是侯孝賢"></Image>
-                            <Box m={{ base:"12px auto auto", md:"40px auto auto"}}  w={{ base:"100%", md:"80%" }}>
+                            <Image m="auto" w="90%" borderRadius="8px" bgSize="cover" src="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section5_TaiwanFoodculture.png" alt="台灣飲食文化"></Image>
+                            <Image m="auto" w="90%" borderRadius="8px" bgSize="cover" src="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section5_TaiwanTroditionalclothies.jpg" alt="傳統服飾"></Image>
+                            <Image m="auto" w="90%" borderRadius="8px" bgSize="cover" src="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section5_HeIsHoXian.png" alt="他是侯孝賢"></Image>
+                            <Box m={{ base:"12px auto auto"}}  w={{ base:"100%", md:"80%" }}>
                                 {/* Image */}
 
                                 {/* Heading */}
@@ -48,7 +48,7 @@ function Page5 () {
                                 </Box>
                             </Box>
 
-                            <Box m={{ base:"12px auto auto", md:"40px auto auto"}}  w={{ base:"100%",md:"80%" }}>
+                            <Box m={{ base:"12px auto auto"}}  w={{ base:"100%",md:"80%" }}>
 
                                 {/* Heading */}
                                 <Box mt="8" color="#7156E5" fontFamily="Roboto" fontSize="20px" fontWeight="500" lineHeight="24px" textAlign={{ base:"left",md:"center"}}>
@@ -61,7 +61,7 @@ function Page5 () {
                                 </Box>
                             </Box>
 
-                            <Box m={{ base:"12px auto auto", md:"40px auto auto"}}  w={{ base:"100%",md:"80%" }}>
+                            <Box m={{ base:"12px auto auto"}}  w={{ base:"100%",md:"80%" }}>
 
                                 {/* Heading */}
                                 <Box mt="8" color="#7156E5" fontFamily="Roboto" fontSize="20px" fontWeight="500" lineHeight="24px" textAlign={{ base:"left",md:"center"}}>

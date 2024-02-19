@@ -55,8 +55,6 @@ function Page2 () {
                         onSwiper={(swiper) => console.log(swiper)}
                         className="mySwiper"
                     >
-
-
                         <SwiperSlide>
                             <Box w={{ base:"95%", md:"90%"}} h="350px" mt="5px"  borderRadius="8px"
                             border="1px solid #e5e5e5" boxShadow="0 1 8 0 rgba(0,0,0,0.3)" 
@@ -279,7 +277,7 @@ function Page2 () {
             {/* Destop Card */}
             <Show above='md'>
                 <Box h="100%" display="flex" flexWrap="wrap" position="relative" >
-                    <Grid gap="20px" gridTemplateColumns={{ md:"1fr 1fr", lg:"1fr 1fr 1fr", xl:"1fr 1fr 1fr 1fr"}}>
+                    <Grid gap="20px" gridTemplateColumns={{ md:"1fr 1fr", lg:"1fr 1fr 1fr", xl:"1fr 1fr 1fr 1fr"}} gridTemplateRows={{ md:"1fr 1fr" }}>
                         <Box w={{ base:"95%", md:"90%"}} h="350px" mt="5px"  borderRadius="8px"
                             border="1px solid #e5e5e5" boxShadow="0 1 8 0 rgba(0,0,0,0.3)" 
                             pos={{ base:"absolute", md:"unset"}} transform={{ base:"translate(-50%, -50%)", md:"translate(5%, 2%)" }} left={{ base:"50%" }} top={{ base:"50%" }}
