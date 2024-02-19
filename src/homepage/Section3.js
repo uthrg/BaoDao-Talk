@@ -187,7 +187,7 @@ function Page3 () {
                             <Box color="#313030" fontFamily="Roboto" fontSize={{ base:"16px",md:"20px" }} fontWeight={{ base:"600", md:"700"}} lineHeight={{ base:"24px",md:"30px" }}>
                                 <p>Boost your Mandarin learning journey</p>
                             </Box>
-                            <Box color="#6F6e6e" fontFamily="Roboto" fontSize={{ base:'14px', md:"16px" }} fontWeight="400" lineHeight={{ base:'22px', md:"24px" }}>
+                            <Box maxW={{ md:"520px" }} color="#6F6e6e" fontFamily="Roboto" fontSize={{ base:'14px', md:"16px" }} fontWeight="400" lineHeight={{ base:'22px', md:"24px" }}>
                                 <p>Learning Traditional Mandarin will enhance your comprehension of Chinese culture and help you learn Mandarin more quickly in the long run.</p>
                             </Box>
                         </Box>

@@ -8,7 +8,6 @@ import 'swiper/css/pagination';
 import './swiper.css';
 
 
-
 function Page2 () {
     return (
         <Box mt={{ base:"5px",md:"10px" }} h={{ base:"570px", md:"auto" }} w="100%" maxW="1500px" pos="relative" transform="translate(-50%, 0)" left="50%" p="3" display="flex" flexDirection="column" justifyContent="space-between" color="#313030" fontFamily="Poppins">
