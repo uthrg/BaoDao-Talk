@@ -1,9 +1,10 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Hide, Show, Image } from '@chakra-ui/react';
 import { chakra } from '@chakra-ui/react';
 
 function Page6 () {
     return(
         <Box 
+        mt="20px"
         w="100%"
         h="482px"
         pos="relative"
@@ -11,43 +12,54 @@ function Page6 () {
         bgPosition="80% 0%"
         bgRepeat="no-repeat"
         bgSize="cover"
-        bgImage="url('https://s3-alpha-sig.figma.com/img/a3a8/bff3/15f8538ded6de55b744f1fd6260a9f1f?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ij~OTCQZWl1tzp-HzMFXmFrjr40QtnYezi0Qj0WPAr2puJgcQNtlhn0OIUDXNerEI57fl1U7S2W-LLdheCkM-rb2Wdw9~mRhJR-oJaYTPTwylx08ZXmvaLNcautG43AJmp-mE9dU0U7TpNj3jhzzpY7RQgh8aOy9g8tHcbgRqf9syxgQEdwciycyBY565CLG8RkVRfNykB0b9GuOhfqUAoMwHbSsMnYRthZwlgtv8xgwjA9ACPhR~u3ml8Cg6ujQToiOQ43JDlduV7cb00pzbxxbpXfmZEsPHZtG4Sk8DMW4GxurTz9NaYG1AQFhJCFO6SIxty4wbCRnseDq3XTuOA__')"
+        bgImage="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section6_TwoWomen.png"
         >
-            <Box w="95%" h="450px" p="4" gap="11px" borderRadius="8px" 
-            bgColor="rgba(255, 255, 255, 0.95)" 
+            <Box w={{ base:"95%", md:"50%" }} h="90%" p="16px" gap={{ base:"11px", md:"16px", xl:"20px"}} borderRadius="8px" 
+            bgColor={{ base:"rgba(255, 255, 255, 0.95)",md:"#fff" }}
             display="flex"
             flexDirection="column" 
             justifyContent="space-between"
             position="absolute"
             transform="translate(-50%,-50%)"
             top="50%" 
-            left="50%"
+            left={{ base:"50%",md:"28%" }}
             >
-                <Box mt="1" color="#313030" fontFamily="Poppins" fontSize="20px" fontWeight="700" lineHeight="30px">
+
+
+                {/* Title */}
+                <Box m={{ base:"4px 0 0 0", md:"10px 0 0 16px" }} color="#313030" fontFamily="Poppins" fontSize={{ base:"20px",md:"32px" }} fontWeight="700" lineHeight={{ base:"30px",md:"48px" }}>
                     <chakra.h5>About BaoDao Talk</chakra.h5>
                 </Box>
 
-                <Box mt="1" color="#313030" fontFamily="Roboto" fontSize="16px" fontWeight="400" lineHeight="24px">
+
+                {/* Content */}
+                <Box m={{ md:"0 0  0 16px", xl:"0 49px 0 16px"}} color="#313030" fontFamily="Roboto" fontSize="16px" fontWeight="400" lineHeight="24px" justifyContent="space-between">
                     <p>"寶島 BaoDao" means "beautiful and rich island" which is another name represents Taiwan. </p><br/>
                     <p>We promote Taiwanese culture and Mandarin, offering professional Mandarin learning services to help people know more about Taiwan, and experience its unique culture.</p><br/>
                     <p>Join us in embracing the beauty of Taiwan and sharing the spirit of "BaoDao" with the world.</p>
                 </Box>
 
-                <Box p="8px 24px" 
+
+
+                {/* Start Btn */}
+                <Box
+                m={{ md:"0 16px 24px 16px" }}
+                p={{ base:"8px 0px" }}
+                w={{ base:"100%", md:"50%" }}
+                h={{ md:"48px" }}
+                display="flex"
                 justifyContent="center" 
                 alignItems="center" 
                 borderRadius="4px" 
                 bgColor="#7156E5"
                 color="#fff" 
                 fontFamily="Roboto" 
-                fontSize="13px" 
+                fontSize={{ base:"13px",md:"15px" }}
                 fontWeight="700" 
-                lineHeight="22px"
-                textAlign="center"   
+                lineHeight={{ base:"22px",md:"26px" }}
                 >
-                    <chakra.button
-                    
-                    >Get Started</chakra.button>
+                    <Hide above='md'><button>Get Started</button></Hide>
+                    <Show above='md'><button style={{ display:"contents" }}>Start learning</button></Show>
                 </Box>
             </Box>
         </Box>

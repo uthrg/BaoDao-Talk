@@ -9,6 +9,7 @@ import Page3 from './Page3.js';
 import Page4 from './Page4.js';
 import Page5 from './Page5.js';
 import Page6 from './Page6.js';
+import Footer from './Footer.js';
 
 import { ChakraProvider } from '@chakra-ui/react';
 
@@ -21,6 +22,7 @@ ReactDOM.render(
           <Page4 />
           <Page5 />
           <Page6 />
+          <Footer />
       </ChakraProvider>
   </React.StrictMode>,
   document.getElementById("root"),

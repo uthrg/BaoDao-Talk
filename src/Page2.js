@@ -1,10 +1,17 @@
-import { Box, Hide, Show, Grid } from '@chakra-ui/react';
+import { React } from 'react';
+import { Box, Hide, Show, Image, Grid } from '@chakra-ui/react';
 import { chakra } from '@chakra-ui/react';
-import { Image } from '@chakra-ui/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import './swiper.css';
+
+
 
 function Page2 () {
     return (
-        <Box mt={{ base:"5px",md:"10px" }} h={{ base:"535px", md:"auto" }} w="100%" p="3" display="inline-flex" flexDirection="column" justifyContent="space-between" color="#313030" fontFamily="Poppins">
+        <Box mt={{ base:"5px",md:"10px" }} h={{ base:"570px", md:"auto" }} w="100%" maxW="1500px" pos="relative" transform="translate(-50%, 0)" left="50%" p="3" display="flex" flexDirection="column" justifyContent="space-between" color="#313030" fontFamily="Poppins">
             
             {/* 手機標題 */}
             <Hide above='md'>
@@ -35,56 +42,25 @@ function Page2 () {
             </Show>
 
 
-            {/* Card */}
-            <Box display="flex" flexWrap="wrap" position="relative" >
-                <Grid gap={2} gridTemplateColumns={{ base:"1", md:"auto auto", lg:"auto auto auto", xl:"auto auto auto auto" }}>
-                    
-                    <Box w={{ base:"95%", md:"90%"}} h="350px" mt="5px"  borderRadius="8px"
-                        border="1px solid #e5e5e5" boxShadow="0 1 8 0 rgba(0,0,0,0.3)" 
-                        pos={{ base:"absolute", md:"unset"}} transform={{ base:"translate(-50%, -50%)", md:"translate(5%, 2%)" }} left={{ base:"50%" }} top={{ base:"50%" }}
-                        display="flex" flexDirection="column" justifyContent="space-between"
-                        fontFamily="Roboto">
-                        
-
-                        {/* 圖片 */}
-                        <Box w="100%" h="160px" 
-                            borderRadius="8px 8px 0 0" 
-                            bgPosition="center"
-                            bgRepeat="no-repeat"
-                            bgSize="cover"
-                            bgImage="https://s3-alpha-sig.figma.com/img/36ee/e77c/2a58f64dc666adb5d512cbec7df5b779?Expires=1707696000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cBviZ6uCMNvVJyQuPBJqDCRccHBGC-Q662J8KI~i655p-BLZRBqsc~NtAYpp8GDnWYVeggCpfUAKzI0IngsTE4zMKLifjiMeAWO58dCfGDfpoLQCQU7ghmsavLS~DVl~SU0v3mIj5B-dnmtUMkNqY0hiMrcEotrsxLmwu4TDDIQ8yVdSGkfmBviCizquW9OLQ25-Y1i1VZY42u--8EDIger1Y4LLAUcYsPhjHa4xla-XNbJsvMcoWFVYgDIXQ8NdD1tmYcnBIRSsuS14yyxBAhhofEwPzha29obpAjY7~8TKlUuPUm6Ejjgp-tkZyEy9Qq5S5-LBqdJaqsxIVGxZww__">
-                        </Box>
-
-                        {/* 作者 */}
-                        <Box ml="3" display="flex" alignItems="center">
-                            <Image w="38px" h="38px" borderRadius="72px" src='https://s3-alpha-sig.figma.com/img/adb3/20df/d35339554bf448c93afddbd85b368084?Expires=1707696000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=P8xFDfDbr6ergluAlIvz6YofVU31XhJzzDab4L5tmdfxGLDSNTq2U6OjcC7OXYtoPCJqlMNPFBZpp3fdI70vGXcP3EuejRjykk7wwxvD-7oUEPYDrer~JNHM0DneQxSomu8WEZykDN8N7JehFa2Ij9paovOXMVZyseuwCTZS3lxynY55wz62LsEU10OIRQl2gqreUIJZQhv7g8xbYx5hAegeZNomhOsBqt3x2ofIZc9H5-FW6-YGJuFu8WX~MrRx4XDk2S8IT4o6H6vD5oIdDvj~AU~XkyPndzzKEpEcMgmh~3KCxwqs4d0u-DUJDIzF0vQuTOxTfWTro0F6bUMIhw__'></Image>
-                            <Box ml="3" fontSize="15px" fontWeight="700" lineHeight="26px">
-                                <p>Dobby Potter</p>
-                            </Box>
-                        </Box>
+            {/*  Mobile Card */}
+            <Hide above='md'>
+                <Box h="100%" display="flex" flexWrap="wrap" position="relative" >
+                    <Swiper
+                        pagination={true}
+                        modules={[Pagination]}
+                        loop={true}                       
+                        spaceBetween={10}
+                        slidesPerView={1}
+                        onSlideChange={() => console.log('slide change')}
+                        onSwiper={(swiper) => console.log(swiper)}
+                        className="mySwiper"
+                    >
 
 
-                        {/* Tag */}
-                        <Box ml="3" display="flex" flexWrap="wrap">
-                            <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">TOCEL</Box>
-                            <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
-                            <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
-                            <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
-                            <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
-                        </Box>   
-
-                        {/* Point */}
-                        <Box ml="3" mt="5px" mb="5px" display="flex" alignItems="center" verticalAlign="bottom">
-                            <Box color="#929292" fontSize="14px" fontWeight="600" lineHeight="22px"><p>Trial from</p></Box>
-                            <Box ml="5" color="#313030" fontSize="18px" fontWeight="700" lineHeight="28px"><p>33Points</p></Box>
-                        </Box>
-                    </Box>
-
-                    {/* Card2 */}
-                    <Hide below='md'>
-                        <Box w={{ base:"90%" }} h="350px" mt="3" borderRadius="8px"
+                        <SwiperSlide>
+                            <Box w={{ base:"95%", md:"90%"}} h="350px" mt="5px"  borderRadius="8px"
                             border="1px solid #e5e5e5" boxShadow="0 1 8 0 rgba(0,0,0,0.3)" 
-                            position="relative" transform="translate(-50%, 0%)" left="50%" 
+                            pos={{ base:"absolute", md:"unset"}} transform={{ base:"translate(-50%, -50%)", md:"translate(5%, 2%)" }} left={{ base:"50%" }} top={{ base:"50%" }}
                             display="flex" flexDirection="column" justifyContent="space-between"
                             fontFamily="Roboto">
                             
@@ -95,12 +71,12 @@ function Page2 () {
                                 bgPosition="center"
                                 bgRepeat="no-repeat"
                                 bgSize="cover"
-                                bgImage="https://s3-alpha-sig.figma.com/img/36ee/e77c/2a58f64dc666adb5d512cbec7df5b779?Expires=1707696000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cBviZ6uCMNvVJyQuPBJqDCRccHBGC-Q662J8KI~i655p-BLZRBqsc~NtAYpp8GDnWYVeggCpfUAKzI0IngsTE4zMKLifjiMeAWO58dCfGDfpoLQCQU7ghmsavLS~DVl~SU0v3mIj5B-dnmtUMkNqY0hiMrcEotrsxLmwu4TDDIQ8yVdSGkfmBviCizquW9OLQ25-Y1i1VZY42u--8EDIger1Y4LLAUcYsPhjHa4xla-XNbJsvMcoWFVYgDIXQ8NdD1tmYcnBIRSsuS14yyxBAhhofEwPzha29obpAjY7~8TKlUuPUm6Ejjgp-tkZyEy9Qq5S5-LBqdJaqsxIVGxZww__">
+                                bgImage="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy.png">
                             </Box>
 
                             {/* 作者 */}
                             <Box ml="3" display="flex" alignItems="center">
-                                <Image w="38px" h="38px" borderRadius="72px" src='https://s3-alpha-sig.figma.com/img/adb3/20df/d35339554bf448c93afddbd85b368084?Expires=1707696000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=P8xFDfDbr6ergluAlIvz6YofVU31XhJzzDab4L5tmdfxGLDSNTq2U6OjcC7OXYtoPCJqlMNPFBZpp3fdI70vGXcP3EuejRjykk7wwxvD-7oUEPYDrer~JNHM0DneQxSomu8WEZykDN8N7JehFa2Ij9paovOXMVZyseuwCTZS3lxynY55wz62LsEU10OIRQl2gqreUIJZQhv7g8xbYx5hAegeZNomhOsBqt3x2ofIZc9H5-FW6-YGJuFu8WX~MrRx4XDk2S8IT4o6H6vD5oIdDvj~AU~XkyPndzzKEpEcMgmh~3KCxwqs4d0u-DUJDIzF0vQuTOxTfWTro0F6bUMIhw__'></Image>
+                                <Image w="38px" h="38px" borderRadius="72px" src='https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy_Cercle.png'></Image>
                                 <Box ml="3" fontSize="15px" fontWeight="700" lineHeight="26px">
                                     <p>Dobby Potter</p>
                                 </Box>
@@ -109,11 +85,11 @@ function Page2 () {
 
                             {/* Tag */}
                             <Box ml="3" display="flex" flexWrap="wrap">
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">TOCEL</Grid>
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Grid>
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Grid>
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Grid>
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Grid>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">TOCEL</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
                             </Box>   
 
                             {/* Point */}
@@ -121,14 +97,56 @@ function Page2 () {
                                 <Box color="#929292" fontSize="14px" fontWeight="600" lineHeight="22px"><p>Trial from</p></Box>
                                 <Box ml="5" color="#313030" fontSize="18px" fontWeight="700" lineHeight="28px"><p>33Points</p></Box>
                             </Box>
-                        </Box>
-                    </Hide>
+                            </Box>
+                        </SwiperSlide>
 
-                    {/* Card3 */}
-                    <Hide below='md'>
-                        <Box w={{ base:"90%" }} h="350px" mt="3" borderRadius="8px"
+                        <SwiperSlide>
+                            <Box w={{ base:"95%", md:"90%"}} h="350px" mt="5px"  borderRadius="8px"
+                                border="1px solid #e5e5e5" boxShadow="0 1 8 0 rgba(0,0,0,0.3)" 
+                                pos={{ base:"absolute", md:"unset"}} transform={{ base:"translate(-50%, -50%)", md:"translate(5%, 2%)" }} left={{ base:"50%" }} top={{ base:"50%" }}
+                                display="flex" flexDirection="column" justifyContent="space-between"
+                                fontFamily="Roboto">
+                                
+
+                                {/* 圖片 */}
+                                <Box w="100%" h="160px" 
+                                    borderRadius="8px 8px 0 0" 
+                                    bgPosition="center"
+                                    bgRepeat="no-repeat"
+                                    bgSize="cover"
+                                    bgImage="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy.png">
+                                </Box>
+
+                                {/* 作者 */}
+                                <Box ml="3" display="flex" alignItems="center">
+                                    <Image w="38px" h="38px" borderRadius="72px" src='https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy_Cercle.png'></Image>
+                                    <Box ml="3" fontSize="15px" fontWeight="700" lineHeight="26px">
+                                        <p>Dobby Potter2</p>
+                                    </Box>
+                                </Box>
+
+
+                                {/* Tag */}
+                                <Box ml="3" display="flex" flexWrap="wrap">
+                                    <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">TOCEL</Box>
+                                    <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                    <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
+                                    <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                    <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
+                                </Box>   
+
+                                {/* Point */}
+                                <Box ml="3" mt="5px" mb="5px" display="flex" alignItems="center" verticalAlign="bottom">
+                                    <Box color="#929292" fontSize="14px" fontWeight="600" lineHeight="22px"><p>Trial from</p></Box>
+                                    <Box ml="5" color="#313030" fontSize="18px" fontWeight="700" lineHeight="28px"><p>33Points</p></Box>
+                                </Box>
+                            </Box>
+                        </SwiperSlide>
+
+                        <SwiperSlide>
+                            <Box w={{ base:"95%", md:"90%"}} h="350px" mt="5px"  borderRadius="8px"
                             border="1px solid #e5e5e5" boxShadow="0 1 8 0 rgba(0,0,0,0.3)" 
-                            position="relative" transform="translate(-50%, 0%)" left="50%" 
+                            pos={{ base:"absolute", md:"unset"}} transform={{ base:"translate(-50%, -50%)", md:"translate(5%, 2%)" }} left={{ base:"50%" }} top={{ base:"50%" }}
                             display="flex" flexDirection="column" justifyContent="space-between"
                             fontFamily="Roboto">
                             
@@ -139,25 +157,25 @@ function Page2 () {
                                 bgPosition="center"
                                 bgRepeat="no-repeat"
                                 bgSize="cover"
-                                bgImage="https://s3-alpha-sig.figma.com/img/36ee/e77c/2a58f64dc666adb5d512cbec7df5b779?Expires=1707696000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cBviZ6uCMNvVJyQuPBJqDCRccHBGC-Q662J8KI~i655p-BLZRBqsc~NtAYpp8GDnWYVeggCpfUAKzI0IngsTE4zMKLifjiMeAWO58dCfGDfpoLQCQU7ghmsavLS~DVl~SU0v3mIj5B-dnmtUMkNqY0hiMrcEotrsxLmwu4TDDIQ8yVdSGkfmBviCizquW9OLQ25-Y1i1VZY42u--8EDIger1Y4LLAUcYsPhjHa4xla-XNbJsvMcoWFVYgDIXQ8NdD1tmYcnBIRSsuS14yyxBAhhofEwPzha29obpAjY7~8TKlUuPUm6Ejjgp-tkZyEy9Qq5S5-LBqdJaqsxIVGxZww__">
+                                bgImage="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy.png">
                             </Box>
 
                             {/* 作者 */}
                             <Box ml="3" display="flex" alignItems="center">
-                                <Image w="38px" h="38px" borderRadius="72px" src='https://s3-alpha-sig.figma.com/img/adb3/20df/d35339554bf448c93afddbd85b368084?Expires=1707696000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=P8xFDfDbr6ergluAlIvz6YofVU31XhJzzDab4L5tmdfxGLDSNTq2U6OjcC7OXYtoPCJqlMNPFBZpp3fdI70vGXcP3EuejRjykk7wwxvD-7oUEPYDrer~JNHM0DneQxSomu8WEZykDN8N7JehFa2Ij9paovOXMVZyseuwCTZS3lxynY55wz62LsEU10OIRQl2gqreUIJZQhv7g8xbYx5hAegeZNomhOsBqt3x2ofIZc9H5-FW6-YGJuFu8WX~MrRx4XDk2S8IT4o6H6vD5oIdDvj~AU~XkyPndzzKEpEcMgmh~3KCxwqs4d0u-DUJDIzF0vQuTOxTfWTro0F6bUMIhw__'></Image>
+                                <Image w="38px" h="38px" borderRadius="72px" src='https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy_Cercle.png'></Image>
                                 <Box ml="3" fontSize="15px" fontWeight="700" lineHeight="26px">
-                                    <p>Dobby Potter</p>
+                                    <p>Dobby Potter3</p>
                                 </Box>
                             </Box>
 
 
                             {/* Tag */}
                             <Box ml="3" display="flex" flexWrap="wrap">
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">TOCEL</Grid>
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Grid>
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Grid>
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Grid>
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Grid>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">TOCEL</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
                             </Box>   
 
                             {/* Point */}
@@ -165,14 +183,13 @@ function Page2 () {
                                 <Box color="#929292" fontSize="14px" fontWeight="600" lineHeight="22px"><p>Trial from</p></Box>
                                 <Box ml="5" color="#313030" fontSize="18px" fontWeight="700" lineHeight="28px"><p>33Points</p></Box>
                             </Box>
-                        </Box>
-                    </Hide>
+                            </Box>
+                        </SwiperSlide>
 
-                    {/* Card4 */}
-                    <Hide below='md'>
-                        <Box w={{ base:"90%" }} h="350px" mt="3" borderRadius="8px"
+                        <SwiperSlide>
+                            <Box w={{ base:"95%", md:"90%"}} h="350px" mt="5px"  borderRadius="8px"
                             border="1px solid #e5e5e5" boxShadow="0 1 8 0 rgba(0,0,0,0.3)" 
-                            position="relative" transform="translate(-50%, 0%)" left="50%" 
+                            pos={{ base:"absolute", md:"unset"}} transform={{ base:"translate(-50%, -50%)", md:"translate(5%, 2%)" }} left={{ base:"50%" }} top={{ base:"50%" }}
                             display="flex" flexDirection="column" justifyContent="space-between"
                             fontFamily="Roboto">
                             
@@ -183,25 +200,25 @@ function Page2 () {
                                 bgPosition="center"
                                 bgRepeat="no-repeat"
                                 bgSize="cover"
-                                bgImage="https://s3-alpha-sig.figma.com/img/36ee/e77c/2a58f64dc666adb5d512cbec7df5b779?Expires=1707696000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cBviZ6uCMNvVJyQuPBJqDCRccHBGC-Q662J8KI~i655p-BLZRBqsc~NtAYpp8GDnWYVeggCpfUAKzI0IngsTE4zMKLifjiMeAWO58dCfGDfpoLQCQU7ghmsavLS~DVl~SU0v3mIj5B-dnmtUMkNqY0hiMrcEotrsxLmwu4TDDIQ8yVdSGkfmBviCizquW9OLQ25-Y1i1VZY42u--8EDIger1Y4LLAUcYsPhjHa4xla-XNbJsvMcoWFVYgDIXQ8NdD1tmYcnBIRSsuS14yyxBAhhofEwPzha29obpAjY7~8TKlUuPUm6Ejjgp-tkZyEy9Qq5S5-LBqdJaqsxIVGxZww__">
+                                bgImage="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy.png">
                             </Box>
 
                             {/* 作者 */}
                             <Box ml="3" display="flex" alignItems="center">
-                                <Image w="38px" h="38px" borderRadius="72px" src='https://s3-alpha-sig.figma.com/img/adb3/20df/d35339554bf448c93afddbd85b368084?Expires=1707696000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=P8xFDfDbr6ergluAlIvz6YofVU31XhJzzDab4L5tmdfxGLDSNTq2U6OjcC7OXYtoPCJqlMNPFBZpp3fdI70vGXcP3EuejRjykk7wwxvD-7oUEPYDrer~JNHM0DneQxSomu8WEZykDN8N7JehFa2Ij9paovOXMVZyseuwCTZS3lxynY55wz62LsEU10OIRQl2gqreUIJZQhv7g8xbYx5hAegeZNomhOsBqt3x2ofIZc9H5-FW6-YGJuFu8WX~MrRx4XDk2S8IT4o6H6vD5oIdDvj~AU~XkyPndzzKEpEcMgmh~3KCxwqs4d0u-DUJDIzF0vQuTOxTfWTro0F6bUMIhw__'></Image>
+                                <Image w="38px" h="38px" borderRadius="72px" src='https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy_Cercle.png'></Image>
                                 <Box ml="3" fontSize="15px" fontWeight="700" lineHeight="26px">
-                                    <p>Dobby Potter</p>
+                                    <p>Dobby Potter4</p>
                                 </Box>
                             </Box>
 
 
                             {/* Tag */}
                             <Box ml="3" display="flex" flexWrap="wrap">
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">TOCEL</Grid>
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Grid>
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Grid>
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Grid>
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Grid>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">TOCEL</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
                             </Box>   
 
                             {/* Point */}
@@ -209,14 +226,13 @@ function Page2 () {
                                 <Box color="#929292" fontSize="14px" fontWeight="600" lineHeight="22px"><p>Trial from</p></Box>
                                 <Box ml="5" color="#313030" fontSize="18px" fontWeight="700" lineHeight="28px"><p>33Points</p></Box>
                             </Box>
-                        </Box>
-                    </Hide>
+                            </Box>
+                        </SwiperSlide>
 
-                    {/* Card5 */}
-                    <Hide below='md'>
-                        <Box w={{ base:"90%" }} h="350px" mt="3" borderRadius="8px"
+                        <SwiperSlide>
+                            <Box w={{ base:"95%", md:"90%"}} h="350px" mt="5px"  borderRadius="8px"
                             border="1px solid #e5e5e5" boxShadow="0 1 8 0 rgba(0,0,0,0.3)" 
-                            position="relative" transform="translate(-50%, 0%)" left="50%" 
+                            pos={{ base:"absolute", md:"unset"}} transform={{ base:"translate(-50%, -50%)", md:"translate(5%, 2%)" }} left={{ base:"50%" }} top={{ base:"50%" }}
                             display="flex" flexDirection="column" justifyContent="space-between"
                             fontFamily="Roboto">
                             
@@ -227,25 +243,25 @@ function Page2 () {
                                 bgPosition="center"
                                 bgRepeat="no-repeat"
                                 bgSize="cover"
-                                bgImage="https://s3-alpha-sig.figma.com/img/36ee/e77c/2a58f64dc666adb5d512cbec7df5b779?Expires=1707696000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cBviZ6uCMNvVJyQuPBJqDCRccHBGC-Q662J8KI~i655p-BLZRBqsc~NtAYpp8GDnWYVeggCpfUAKzI0IngsTE4zMKLifjiMeAWO58dCfGDfpoLQCQU7ghmsavLS~DVl~SU0v3mIj5B-dnmtUMkNqY0hiMrcEotrsxLmwu4TDDIQ8yVdSGkfmBviCizquW9OLQ25-Y1i1VZY42u--8EDIger1Y4LLAUcYsPhjHa4xla-XNbJsvMcoWFVYgDIXQ8NdD1tmYcnBIRSsuS14yyxBAhhofEwPzha29obpAjY7~8TKlUuPUm6Ejjgp-tkZyEy9Qq5S5-LBqdJaqsxIVGxZww__">
+                                bgImage="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy.png">
                             </Box>
 
                             {/* 作者 */}
                             <Box ml="3" display="flex" alignItems="center">
-                                <Image w="38px" h="38px" borderRadius="72px" src='https://s3-alpha-sig.figma.com/img/adb3/20df/d35339554bf448c93afddbd85b368084?Expires=1707696000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=P8xFDfDbr6ergluAlIvz6YofVU31XhJzzDab4L5tmdfxGLDSNTq2U6OjcC7OXYtoPCJqlMNPFBZpp3fdI70vGXcP3EuejRjykk7wwxvD-7oUEPYDrer~JNHM0DneQxSomu8WEZykDN8N7JehFa2Ij9paovOXMVZyseuwCTZS3lxynY55wz62LsEU10OIRQl2gqreUIJZQhv7g8xbYx5hAegeZNomhOsBqt3x2ofIZc9H5-FW6-YGJuFu8WX~MrRx4XDk2S8IT4o6H6vD5oIdDvj~AU~XkyPndzzKEpEcMgmh~3KCxwqs4d0u-DUJDIzF0vQuTOxTfWTro0F6bUMIhw__'></Image>
+                                <Image w="38px" h="38px" borderRadius="72px" src='https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy_Cercle.png'></Image>
                                 <Box ml="3" fontSize="15px" fontWeight="700" lineHeight="26px">
-                                    <p>Dobby Potter</p>
+                                    <p>Dobby Potter5</p>
                                 </Box>
                             </Box>
 
 
                             {/* Tag */}
                             <Box ml="3" display="flex" flexWrap="wrap">
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">TOCEL</Grid>
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Grid>
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Grid>
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Grid>
-                                <Grid m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Grid>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">TOCEL</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
                             </Box>   
 
                             {/* Point */}
@@ -253,17 +269,231 @@ function Page2 () {
                                 <Box color="#929292" fontSize="14px" fontWeight="600" lineHeight="22px"><p>Trial from</p></Box>
                                 <Box ml="5" color="#313030" fontSize="18px" fontWeight="700" lineHeight="28px"><p>33Points</p></Box>
                             </Box>
-                        </Box>
-                    </Hide>
-                </Grid>
-            </Box>
+                            </Box>
+                        </SwiperSlide>
+                    </Swiper>
+                </Box>  
+            </Hide>
             
 
+            {/* Destop Card */}
+            <Show above='md'>
+                <Box h="100%" display="flex" flexWrap="wrap" position="relative" >
+                    <Grid gap="20px" gridTemplateColumns={{ md:"1fr 1fr", lg:"1fr 1fr 1fr", xl:"1fr 1fr 1fr 1fr"}}>
+                        <Box w={{ base:"95%", md:"90%"}} h="350px" mt="5px"  borderRadius="8px"
+                            border="1px solid #e5e5e5" boxShadow="0 1 8 0 rgba(0,0,0,0.3)" 
+                            pos={{ base:"absolute", md:"unset"}} transform={{ base:"translate(-50%, -50%)", md:"translate(5%, 2%)" }} left={{ base:"50%" }} top={{ base:"50%" }}
+                            display="flex" flexDirection="column" justifyContent="space-between"
+                            fontFamily="Roboto">
+                            
+
+                            {/* 圖片 */}
+                            <Box w="100%" h="160px" 
+                                borderRadius="8px 8px 0 0" 
+                                bgPosition="center"
+                                bgRepeat="no-repeat"
+                                bgSize="cover"
+                                bgImage="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy.png">
+                            </Box>
+
+                            {/* 作者 */}
+                            <Box ml="3" display="flex" alignItems="center">
+                                <Image w="38px" h="38px" borderRadius="72px" src='https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy_Cercle.png'></Image>
+                                <Box ml="3" fontSize="15px" fontWeight="700" lineHeight="26px">
+                                    <p>Dobby Potter</p>
+                                </Box>
+                            </Box>
+
+
+                            {/* Tag */}
+                            <Box ml="3" display="flex" flexWrap="wrap">
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">TOCEL</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                <Box m={{ base:"5px", md:"3px"}} p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
+                            </Box>   
+
+                            {/* Point */}
+                            <Box ml="3" mt="5px" mb="5px" display="flex" alignItems="center" verticalAlign="bottom">
+                                <Box color="#929292" fontSize="14px" fontWeight="600" lineHeight="22px"><p>Trial from</p></Box>
+                                <Box ml="5" color="#313030" fontSize="18px" fontWeight="700" lineHeight="28px"><p>33Points</p></Box>
+                            </Box>
+                        </Box>
+                        
+                        <Box w="90%" h="350px" mt="5px"  borderRadius="8px"
+                            border="1px solid #e5e5e5" boxShadow="0 1 8 0 rgba(0,0,0,0.3)" 
+                            pos={{ base:"absolute", md:"unset"}} transform={{ base:"translate(-50%, -50%)", md:"translate(5%, 2%)" }} left={{ base:"50%" }} top={{ base:"50%" }}
+                            display="flex" flexDirection="column" justifyContent="space-between"
+                            fontFamily="Roboto">
+                            
+
+                            {/* 圖片 */}
+                            <Box w="100%" h="160px" 
+                                borderRadius="8px 8px 0 0" 
+                                bgPosition="center"
+                                bgRepeat="no-repeat"
+                                bgSize="cover"
+                                bgImage="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy.png">
+                            </Box>
+
+                            {/* 作者 */}
+                            <Box ml="3" display="flex" alignItems="center">
+                                <Image w="38px" h="38px" borderRadius="72px" src='https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy_Cercle.png'></Image>
+                                <Box ml="3" fontSize="15px" fontWeight="700" lineHeight="26px">
+                                    <p>Dobby Potter</p>
+                                </Box>
+                            </Box>
+
+
+                            {/* Tag */}
+                            <Box ml="3" display="flex" flexWrap="wrap">
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">TOCEL</Box>
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
+                            </Box>   
+
+                            {/* Point */}
+                            <Box ml="3" mt="5px" mb="5px" display="flex" alignItems="center" verticalAlign="bottom">
+                                <Box color="#929292" fontSize="14px" fontWeight="600" lineHeight="22px"><p>Trial from</p></Box>
+                                <Box ml="5" color="#313030" fontSize="18px" fontWeight="700" lineHeight="28px"><p>33Points</p></Box>
+                            </Box>
+                        </Box>
+
+                        <Box w="90%" h="350px" mt="5px"  borderRadius="8px"
+                            border="1px solid #e5e5e5" boxShadow="0 1 8 0 rgba(0,0,0,0.3)" 
+                            pos={{ base:"absolute", md:"unset"}} transform={{ base:"translate(-50%, -50%)", md:"translate(5%, 2%)" }} left={{ base:"50%" }} top={{ base:"50%" }}
+                            display="flex" flexDirection="column" justifyContent="space-between"
+                            fontFamily="Roboto">
+                            
+
+                            {/* 圖片 */}
+                            <Box w="100%" h="160px" 
+                                borderRadius="8px 8px 0 0" 
+                                bgPosition="center"
+                                bgRepeat="no-repeat"
+                                bgSize="cover"
+                                bgImage="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy.png">
+                            </Box>
+
+                            {/* 作者 */}
+                            <Box ml="3" display="flex" alignItems="center">
+                                <Image w="38px" h="38px" borderRadius="72px" src='https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy_Cercle.png'></Image>
+                                <Box ml="3" fontSize="15px" fontWeight="700" lineHeight="26px">
+                                    <p>Dobby Potter</p>
+                                </Box>
+                            </Box>
+
+
+                            {/* Tag */}
+                            <Box ml="3" display="flex" flexWrap="wrap">
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">TOCEL</Box>
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
+                            </Box>   
+
+                            {/* Point */}
+                            <Box ml="3" mt="5px" mb="5px" display="flex" alignItems="center" verticalAlign="bottom">
+                                <Box color="#929292" fontSize="14px" fontWeight="600" lineHeight="22px"><p>Trial from</p></Box>
+                                <Box ml="5" color="#313030" fontSize="18px" fontWeight="700" lineHeight="28px"><p>33Points</p></Box>
+                            </Box>
+                        </Box>
+
+                        <Box w="90%" h="350px" mt="5px"  borderRadius="8px"
+                            border="1px solid #e5e5e5" boxShadow="0 1 8 0 rgba(0,0,0,0.3)" 
+                            pos={{ base:"absolute", md:"unset"}} transform={{ base:"translate(-50%, -50%)", md:"translate(5%, 2%)" }} left={{ base:"50%" }} top={{ base:"50%" }}
+                            display="flex" flexDirection="column" justifyContent="space-between"
+                            fontFamily="Roboto">
+                            
+
+                            {/* 圖片 */}
+                            <Box w="100%" h="160px" 
+                                borderRadius="8px 8px 0 0" 
+                                bgPosition="center"
+                                bgRepeat="no-repeat"
+                                bgSize="cover"
+                                bgImage="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy.png">
+                            </Box>
+
+                            {/* 作者 */}
+                            <Box ml="3" display="flex" alignItems="center">
+                                <Image w="38px" h="38px" borderRadius="72px" src='https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy_Cercle.png'></Image>
+                                <Box ml="3" fontSize="15px" fontWeight="700" lineHeight="26px">
+                                    <p>Dobby Potter</p>
+                                </Box>
+                            </Box>
+
+
+                            {/* Tag */}
+                            <Box ml="3" display="flex" flexWrap="wrap">
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">TOCEL</Box>
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
+                            </Box>   
+
+                            {/* Point */}
+                            <Box ml="3" mt="5px" mb="5px" display="flex" alignItems="center" verticalAlign="bottom">
+                                <Box color="#929292" fontSize="14px" fontWeight="600" lineHeight="22px"><p>Trial from</p></Box>
+                                <Box ml="5" color="#313030" fontSize="18px" fontWeight="700" lineHeight="28px"><p>33Points</p></Box>
+                            </Box>
+                        </Box>
+
+                        <Box w="90%" h="350px" mt="5px"  borderRadius="8px"
+                            border="1px solid #e5e5e5" boxShadow="0 1 8 0 rgba(0,0,0,0.3)" 
+                            pos={{ base:"absolute", md:"unset"}} transform={{ base:"translate(-50%, -50%)", md:"translate(5%, 2%)" }} left={{ base:"50%" }} top={{ base:"50%" }}
+                            display="flex" flexDirection="column" justifyContent="space-between"
+                            fontFamily="Roboto">
+                            
+
+                            {/* 圖片 */}
+                            <Box w="100%" h="160px" 
+                                borderRadius="8px 8px 0 0" 
+                                bgPosition="center"
+                                bgRepeat="no-repeat"
+                                bgSize="cover"
+                                bgImage="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy.png">
+                            </Box>
+
+                            {/* 作者 */}
+                            <Box ml="3" display="flex" alignItems="center">
+                                <Image w="38px" h="38px" borderRadius="72px" src='https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section2_Shortguy_Cercle.png'></Image>
+                                <Box ml="3" fontSize="15px" fontWeight="700" lineHeight="26px">
+                                    <p>Dobby Potter</p>
+                                </Box>
+                            </Box>
+
+
+                            {/* Tag */}
+                            <Box ml="3" display="flex" flexWrap="wrap">
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">TOCEL</Box>
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Business</Box>
+                                <Box m="3px" p="4px 16px" alignItems="center" borderRadius="4px" bgColor="#f5f6f9" fontSize="14px" fontWeight="600" lineHeight="22px">Travel</Box>
+                            </Box>   
+
+                            {/* Point */}
+                            <Box ml="3" mt="5px" mb="5px" display="flex" alignItems="center" verticalAlign="bottom">
+                                <Box color="#929292" fontSize="14px" fontWeight="600" lineHeight="22px"><p>Trial from</p></Box>
+                                <Box ml="5" color="#313030" fontSize="18px" fontWeight="700" lineHeight="28px"><p>33Points</p></Box>
+                            </Box>
+                        </Box>
+                    </Grid>
+                </Box>
+            </Show>
+
+
             {/* Find Tutor Btn */}
-            <Box mt="3">    
+            <Box>    
                 <chakra.button
                     width={{ base:"95%", md:"305px" }}
-                    mb="5"
+                    m="20px 0"
                     padding={{ base:"8px 24px", md:"11px 113px"}}           
                     alignItems="center"
                     position="relative"

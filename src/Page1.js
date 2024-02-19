@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box,Image } from "@chakra-ui/react";
 import { chakra } from "@chakra-ui/react";
 import { Show, Hide } from '@chakra-ui/react'
 import { Select } from '@chakra-ui/react'
@@ -22,7 +22,7 @@ function Page1() {
         h={{ base:"42px", md:"58px"}}
         >
           <img
-            src="https://s3-alpha-sig.figma.com/img/e05f/1365/7704c2257c5dfe118d8210a07062946e?Expires=1707696000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=gp8wM8xDGBJ9DqyKsVBkPSZygeQ~xYqia8X9QNXP8hmRvXeI5gHkSmM0TKTla8jESEvMx0Ut7J5IMjqiNdxiJ-2nYMNUGtqA2Xyk~dX8qt9d-HdhrJj2qf2Uk9NRPDDodiuYtZ~fgGnu7ek-3VQgqQcWgJSt8IECRZirXqQmyKwzxkcmn6s~2OKLNn2RxEHDneAZm210bt4dwhexmHy1yKg7xo5~ZCUSymtacgnKnje49HC4QvSAayg8wRzG8tLPfrgldmIttRpd9MeVsOkBcABn9KOm1jI7y~vtEVYcGMF6uus08WgY7vUimOG5UOKuttFDb7LSb6k8Kd7WLW6EIw__"
+            src="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/logo-horizontal.png"
             alt="BaoDaoTalkLogo"
           ></img>
         </Box>
@@ -93,19 +93,19 @@ function Page1() {
       <Hide above="md">
         <Box w="95%"
           color="#313030"
-          fontFamily="Roboto"
+          
           position="relative"
           transform="translate(-50%, 0%)"
           left="50%"
           >
-          <Box fontSize="16px" fontWeight="700" lineHeight="24px">
+          <Box fontFamily="Roboto" fontSize="16px" fontWeight="700" lineHeight="24px">
             <p mt="5px">Online Mandarin Learning</p>
           </Box>
-          <Box mt="2" fontSize="24px" fontWeight="700" lineHeight="36px">
+          <Box mt="2" fontFamily="Poppins" fontSize="24px" fontWeight="700" lineHeight="36px">
             <chakra.h4>Learn Once,</chakra.h4>
             <chakra.h4>Use Anywhere</chakra.h4>
           </Box>
-          <Box mt="2" fontSize="14px" fontWeight="400" lineHeight="22px">
+          <Box mt="2" fontFamily="Roboto" fontSize="14px" fontWeight="400" lineHeight="22px">
             <p>
               Join BaoDao Talk today to immerse yourself in the language and
               culture simultaneously
@@ -140,95 +140,92 @@ function Page1() {
           bgPos="center"
           backgroundSize='cover'
           backgroundRepeat="no-repeat"
-          bgImage="/image/hero.png"
+          bgImage="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section1_Women_Mobile.png"
           alt="picture"
         ></Box>
       </Hide>
 
 
       <Show above="md">
-        {/* 電腦Content */}
-        <Box p="20px" bgColor="#F5F6F9" display="flex">
-          <Box 
-            w="50%"
-            // bgColor="#fff"
-            p="40px 27px"
-          >
-            <Box
-                color="#313030"
-                fontFamily="Roboto"
-                position="relative"
-                transform="translate(-50%, 0%)"
-                left="50%"
-                >
-                <Box fontSize="24px" fontWeight="700" lineHeight="36px">
-                  <p mt="5px">Online Mandarin Learning</p>
-                </Box>
-                <Box mt="2" fontSize="48px" fontWeight="700" lineHeight="64px">
-                  <chakra.h2>Learn Once,Use Anywhere</chakra.h2>
-                </Box>
-                <Box mt="2" fontSize="16px" fontWeight="400" lineHeight="24px">
-                  <p>
-                    Join BaoDao Talk today to immerse yourself in the language and
-                    culture simultaneously
-                  </p>
-                </Box>
-
-                <chakra.button
-                  h="48px"
-                  mt="5"
-                  mr="5"
-                  mb="5"
-                  p="12px 24px"
-                  justifyContent="center"
-                  alignItems="center"
-                  borderRadius="4px"
-                  bgColor="#7156E5"
-                  color="#fff"
-                  fontFamily="Roboto"
-                  fontSize="15px"
-                  fontWeight="700"
-                  lineHeight="26px"
-                >
-                  Get Started
-                </chakra.button>
-
-                <chakra.button
-                  h="48px"
-                  mt="5"
-                  mb="5"
-                  p="12px 24px"
-                  justifyContent="center"
-                  alignItems="center"
-                  borderRadius="4px"
-                  border="1px solid #313030"
-                  bgColor="#F5F6F9"
+        <Box bgColor="#F5F6F9">
+        <Box maxW="1368px" p="20px" display="flex" pos="relative" transform="translate(-50%, 0%)" left="50%"  justifyContent="space-between">
+            {/* 電腦Content */}
+            <Box 
+              w="50%"
+              // bgColor="#fff"
+              p="40px 27px"
+            >
+              <Box
                   color="#313030"
-                  fontFamily="Roboto"
-                  fontSize="15px"
-                  fontWeight="700"
-                  lineHeight="26px"
-                  display="inline-flex"
-                >
-                  How it works
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M9 18L15 12L9 6" stroke="#313030" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </chakra.button>
-            </Box>
-          </Box>
+                  position="relative"
+                  transform="translate(-50%, 0%)"
+                  left="50%"
+                  >
+                  <Box fontFamily="Poppins" fontSize="32px" fontWeight="700" lineHeight="36px">
+                    <p mt="5px">Online Mandarin Learning</p>
+                  </Box>
+                  <Box mt="2" fontFamily="Poppins" fontSize="48px" fontWeight="700" lineHeight="64px">
+                    <chakra.h2>Learn Once,Use Anywhere</chakra.h2>
+                  </Box>
+                  <Box mt="2" fontFamily="Roboto" fontSize="16px" fontWeight="400" lineHeight="24px">
+                    <p>
+                      Join BaoDao Talk today to immerse yourself in the language and
+                      culture simultaneously
+                    </p>
+                  </Box>
 
-          {/* 電腦圖片 */}
-          <Box 
-            w="50%"
-            h="368px"
-            bgPos="right"
-            backgroundSize='contain'
-            backgroundRepeat="no-repeat"
-            bgImage="/image/hero_v4.png"
-            alt="picture"
-          />
-        </Box>
+                  <chakra.button
+                    h="48px"
+                    mt="5"
+                    mr="5"
+                    mb="5"
+                    p="12px 24px"
+                    justifyContent="center"
+                    alignItems="center"
+                    borderRadius="4px"
+                    bgColor="#7156E5"
+                    color="#fff"
+                    fontFamily="Roboto"
+                    fontSize="15px"
+                    fontWeight="700"
+                    lineHeight="26px"
+                  >
+                    Get Started
+                  </chakra.button>
+
+                  <chakra.button
+                    h="48px"
+                    mt="5"
+                    mb="5"
+                    p="12px 24px"
+                    justifyContent="center"
+                    alignItems="center"
+                    borderRadius="4px"
+                    border="1px solid #313030"
+                    bgColor="#F5F6F9"
+                    color="#313030"
+                    fontFamily="Roboto"
+                    fontSize="15px"
+                    fontWeight="700"
+                    lineHeight="26px"
+                    display="inline-flex"
+                  >
+                    How it works
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M9 18L15 12L9 6" stroke="#313030" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </chakra.button>
+              </Box>
+            </Box>
+
+
+            {/* 電腦圖片 */}
+            <Box w="50%" backgroundSize='contain' backgroundRepeat="no-repeat" pos="relative">
+              <Image maxH="368px" src="https://static-dev-baodao.s3.ap-northeast-2.amazonaws.com/homepage/Section1_Women_Desktop.png" alt="picture" pos="absolute" transform="translate(-50%,-50%)" top="50%" left="50%"></Image>
+            </Box>
+            </Box>
+
+          </Box>
       </Show>
 
     </Box>

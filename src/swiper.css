@@ -1,0 +1,16 @@
+.swiper-scrollbar-drag {
+    --swiper-scrollbar-drag-bg-color: #7156E5
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-pagination {
+    --swiper-pagination-top: 390px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #7156E5 !important;
+}
